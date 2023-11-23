@@ -32,4 +32,6 @@ func printSortingAlgorithm(sortFunc sortingFunc, algName string) {
 
 func main() {
 	printSortingAlgorithm(sorting.BasicBubbleSort, "basic bubble sort")
+
+	printSortingAlgorithm(sorting.DecreasingBubbleSort, "decreasing bubble sort")
 }
