@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"time"
 
 	"github.com/Jakub-Ignatowicz/alghoritms-and-data-structures-go/sorting"
 )
@@ -18,7 +19,10 @@ func printSortingAlgorithm(sortFunc sortingFunc, algName string) {
 	fmt.Println("Array before sorting", array)
 	fmt.Println()
 
+	start := time.Now()
 	iterationCount, err := sortFunc(array)
+	end := time.Now()
+	duration := end.Sub(start)
 
 	iterationCountStr := strconv.FormatUint(iterationCount, 10)
 
@@ -27,6 +31,7 @@ func printSortingAlgorithm(sortFunc sortingFunc, algName string) {
 	} else {
 		fmt.Printf("Array sorted with %s: %v\n\n", algName, array)
 		fmt.Printf("Array sorted in %s iterations\n", iterationCountStr)
+		fmt.Printf("Arrat sorted in %.2f nanoseconds", float64(duration.Nanoseconds()))
 	}
 }
 
