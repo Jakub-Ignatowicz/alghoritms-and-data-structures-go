@@ -14,6 +14,7 @@ func printSortingAlgorithm(sortFunc sortingFunc, algName string) {
 	fmt.Println("\n---------------------")
 	fmt.Println(algName)
 	fmt.Println("---------------------\n")
+
 	array := []int{56, 23, 78, 12, 45, 67, 89, 34, 90, 14, 76, 29, 50, 88, 41, 3, 19, 72, 5, 61, 98, 27, 83, 9, 38, 71, 2, 64, 49, 94}
 
 	fmt.Println("Array before sorting", array)
@@ -43,4 +44,6 @@ func main() {
 	printSortingAlgorithm(sorting.DecreasingFlagBubbleSort, "decreasing flag bubble sort")
 
 	printSortingAlgorithm(sorting.SelectionSort, "selection sort")
+
+	printSortingAlgorithm(sorting.CountingSort, "counting sort")
 }
