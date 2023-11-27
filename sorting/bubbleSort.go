@@ -1,14 +1,12 @@
 package sorting
 
-import "errors"
-
-func BasicBubbleSort(arr []int) (uint64, error) {
+func BasicBubbleSort(arr []int) uint64 {
 	n := len(arr)
 
 	var iterationCount uint64 = 0
 
-	if n < 1 {
-		return 0, errors.New("Array is empty")
+	if n <= 1 {
+		return 0
 	}
 
 	for i := 0; i < n-1; i++ {
@@ -20,16 +18,16 @@ func BasicBubbleSort(arr []int) (uint64, error) {
 			}
 		}
 	}
-	return iterationCount, nil
+	return iterationCount
 }
 
-func DecreasingBubbleSort(arr []int) (uint64, error) {
+func DecreasingBubbleSort(arr []int) uint64 {
 	n := len(arr)
 
 	var iterationCount uint64 = 0
 
-	if n < 1 {
-		return 0, errors.New("Array is empty")
+	if n <= 1 {
+		return 0
 	}
 
 	for i := 0; i < n-1; i++ {
@@ -41,16 +39,16 @@ func DecreasingBubbleSort(arr []int) (uint64, error) {
 			}
 		}
 	}
-	return iterationCount, nil
+	return iterationCount
 }
 
-func DecreasingFlagBubbleSort(arr []int) (uint64, error) {
+func DecreasingFlagBubbleSort(arr []int) uint64 {
 	n := len(arr)
 
 	var iterationCount uint64 = 0
 
-	if n < 1 {
-		return 0, errors.New("Array is empty")
+	if n <= 1 {
+		return 0
 	}
 
 	for i := 0; i < n-1; i++ {
@@ -67,5 +65,5 @@ func DecreasingFlagBubbleSort(arr []int) (uint64, error) {
 			break
 		}
 	}
-	return iterationCount, nil
+	return iterationCount
 }

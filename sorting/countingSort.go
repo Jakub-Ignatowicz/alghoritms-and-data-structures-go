@@ -1,10 +1,8 @@
 package sorting
 
-import "errors"
-
-func CountingSort(arr []int) (uint64, error) {
-	if len(arr) == 0 {
-		return 0, errors.New("Array is empty")
+func CountingSort(arr []int) uint64 {
+	if len(arr) <= 1 {
+		return 0
 	}
 	var iterationCount uint64 = 0
 	var aMin, aMax = arr[0], arr[0]
@@ -30,5 +28,5 @@ func CountingSort(arr []int) (uint64, error) {
 			iterationCount++
 		}
 	}
-	return iterationCount, nil
+	return iterationCount
 }

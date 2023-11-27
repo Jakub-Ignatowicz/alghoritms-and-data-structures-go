@@ -1,12 +1,10 @@
 package sorting
 
-import "errors"
-
-func SelectionSort(arr []int) (uint64, error) {
+func SelectionSort(arr []int) uint64 {
 	var iterations uint64 = 0
 	len := len(arr)
-	if len == 0 {
-		return 0, errors.New("Array is empty")
+	if len <= 1 {
+		return 0
 	}
 	for i := 0; i < len-1; i++ {
 		var lowest int
@@ -23,5 +21,5 @@ func SelectionSort(arr []int) (uint64, error) {
 		}
 		arr[i] = lowest
 	}
-	return iterations, nil
+	return iterations
 }

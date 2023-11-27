@@ -8,7 +8,7 @@ import (
 	"github.com/Jakub-Ignatowicz/alghoritms-and-data-structures-go/sorting"
 )
 
-type sortingFunc func(arr []int) (uint64, error)
+type sortingFunc func(arr []int) uint64
 
 func printSortingAlgorithm(sortFunc sortingFunc, algName string) {
 	fmt.Println("\n---------------------")
@@ -21,19 +21,15 @@ func printSortingAlgorithm(sortFunc sortingFunc, algName string) {
 	fmt.Println()
 
 	start := time.Now()
-	iterationCount, err := sortFunc(array)
+	iterationCount := sortFunc(array)
 	end := time.Now()
 	duration := end.Sub(start)
 
 	iterationCountStr := strconv.FormatUint(iterationCount, 10)
 
-	if err != nil {
-		fmt.Println("Error: ", err)
-	} else {
-		fmt.Printf("Array sorted with %s: %v\n\n", algName, array)
-		fmt.Printf("Array sorted in %s iterations\n", iterationCountStr)
-		fmt.Printf("Arrat sorted in %.2f nanoseconds", float64(duration.Nanoseconds()))
-	}
+	fmt.Printf("Array sorted with %s: %v\n\n", algName, array)
+	fmt.Printf("Array sorted in %s iterations\n", iterationCountStr)
+	fmt.Printf("Arrat sorted in %.2f nanoseconds", float64(duration.Nanoseconds()))
 }
 
 func main() {
