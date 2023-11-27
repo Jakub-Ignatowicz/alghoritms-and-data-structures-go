@@ -13,7 +13,7 @@ func radixCountingSortVariation(arr []int, exp int) uint64 {
 	}
 
 	currVal := 0
-	for index, _ := range digitsPosition {
+	for index := range digitsPosition {
 		currVal += digits[index]
 		digitsPosition[index] = currVal
 		iterations++
@@ -26,7 +26,7 @@ func radixCountingSortVariation(arr []int, exp int) uint64 {
 		ans[digitsPosition[digitValue]] = arr[i]
 		iterations++
 	}
-	for index, _ := range ans {
+	for index := range ans {
 		arr[index] = ans[index]
 	}
 	return iterations

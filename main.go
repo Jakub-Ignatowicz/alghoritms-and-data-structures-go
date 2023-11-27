@@ -12,9 +12,7 @@ type sortingFunc func(arr []int) uint64
 type searchingFunc func(arr []int, valueToFind int) (uint64, int)
 
 func printSearchingAlgorithm(searchFunc searchingFunc, algName string) {
-	fmt.Println("\n---------------------")
-	fmt.Println(algName)
-	fmt.Println("---------------------\n")
+	fmt.Printf("\n\n---------------------\n%s\n---------------------\n\n", algName)
 
 	array := []int{2, 3, 5, 9, 12, 14, 19, 23, 27, 29, 34, 38, 41, 45, 49, 50, 56, 61, 64, 67, 71, 72, 76, 78, 83, 88, 89, 90, 94, 98}
 
@@ -32,9 +30,7 @@ func printSearchingAlgorithm(searchFunc searchingFunc, algName string) {
 }
 
 func printSortingAlgorithm(sortFunc sortingFunc, algName string) {
-	fmt.Println("\n---------------------")
-	fmt.Println(algName)
-	fmt.Println("---------------------\n")
+	fmt.Printf("\n\n---------------------\n%s\n---------------------\n\n", algName)
 
 	array := []int{56, 23, 78, 12, 45, 67, 89, 34, 90, 14, 76, 29, 50, 88, 41, 3, 19, 72, 5, 61, 98, 27, 83, 9, 38, 71, 2, 64, 49, 94}
 
