@@ -61,4 +61,6 @@ func main() {
 	printSortingAlgorithm(sorting.CountingSort, "counting sort")
 
 	printSortingAlgorithm(sorting.RadixSort, "radix sort")
+
+	printSortingAlgorithm(sorting.InsertionSort, "insertion sort")
 }
