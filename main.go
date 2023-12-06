@@ -69,4 +69,6 @@ func main() {
 	printSortingAlgorithm(sorting.MergeSortMultiThreaded, "multithreaded merge sort")
 
 	printSortingAlgorithm(sorting.QuickSortLomuto, "quick sort lomuto")
+
+	printSortingAlgorithm(sorting.QuickSortLomutoMultiThreaded, "multithreaded quick sort lomuto")
 }
