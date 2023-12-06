@@ -65,4 +65,6 @@ func main() {
 	printSortingAlgorithm(sorting.InsertionSort, "insertion sort")
 
 	printSortingAlgorithm(sorting.MergeSort, "merge sort")
+
+	printSortingAlgorithm(sorting.MergeSortMultiThreaded, "multithreaded merge sort")
 }
