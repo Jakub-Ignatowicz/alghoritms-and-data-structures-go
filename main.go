@@ -5,28 +5,30 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/Jakub-Ignatowicz/alghoritms-and-data-structures-go/searching"
 	"github.com/Jakub-Ignatowicz/alghoritms-and-data-structures-go/sorting"
 )
 
 type sortingFunc func(arr []int) uint64
-type searchingFunc func(arr []int, valueToFind int) (uint64, int)
+type searchingFunc func(arr []int, value int) (uint64, int)
 
 func printSearchingAlgorithm(searchFunc searchingFunc, algName string) {
 	fmt.Printf("\n\n---------------------\n%s\n---------------------\n\n", algName)
 
+	searchVal := 88
+
 	array := []int{2, 3, 5, 9, 12, 14, 19, 23, 27, 29, 34, 38, 41, 45, 49, 50, 56, 61, 64, 67, 71, 72, 76, 78, 83, 88, 89, 90, 94, 98}
 
 	start := time.Now()
-	iterationCount, index := searchFunc(array, 29)
-	if index == -1 {
-		fmt.Println("Value hasn't been found in this array")
-	}
+	iterationCount, index := searchFunc(array, searchVal)
 	end := time.Now()
 	duration := end.Sub(start)
 
-	iterationCountStr := strconv.FormatUint(iterationCount, 10)
-
-	fmt.Printf("Index of value 29 was found with %s in %s iterations and %.2f nanoseconds\n", algName, iterationCountStr, float64(duration.Nanoseconds()))
+	if index == -1 {
+		fmt.Println("Value hasn't been found in this array")
+	} else {
+		fmt.Printf("Index of value %v was found with %s in %v iterations and %.2f nanoseconds\n", searchVal, algName, iterationCount, float64(duration.Nanoseconds()))
+	}
 }
 
 func printSortingAlgorithm(sortFunc sortingFunc, algName string) {
@@ -73,4 +75,13 @@ func main() {
 	printSortingAlgorithm(sorting.QuickSortLomutoMultiThreaded, "multithreaded quick sort lomuto")
 
 	printSortingAlgorithm(sorting.HoareQuickSort, "quick sort hoare")
+
+	fmt.Println("\n\n------------------------------------------------------------------------------------------------------------------------------")
+	fmt.Println()
+	fmt.Println("                                                         SEARCHING                                                           ")
+	fmt.Println()
+	fmt.Println("------------------------------------------------------------------------------------------------------------------------------")
+
+	printSearchingAlgorithm(searching.LinearSearch, "linear search")
+
 }
