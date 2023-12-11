@@ -87,4 +87,6 @@ func main() {
 	printSearchingAlgorithm(searching.BinarySearch, "binary search")
 
 	printSearchingAlgorithm(searching.InterpolationSearch, "interpolation search")
+
+	printSearchingAlgorithm(searching.ExponentialSearch, "exponential search")
 }
