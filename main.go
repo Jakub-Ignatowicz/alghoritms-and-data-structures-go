@@ -84,4 +84,5 @@ func main() {
 
 	printSearchingAlgorithm(searching.LinearSearch, "linear search")
 
+	printSearchingAlgorithm(searching.BinarySearch, "binary search")
 }
