@@ -34,7 +34,7 @@ func printSearchingAlgorithm(searchFunc searchingFunc, algName string) {
 func printSortingAlgorithm(sortFunc sortingFunc, algName string) {
 	fmt.Printf("\n\n---------------------\n%s\n---------------------\n\n", algName)
 
-	array := []int{56, 23, 78, 12, 45, 67, 89, 34, 90, 14, 76, 29, 50, 88, 41, 3, 19, 72, 5, 61, 98, 27, 83, 9, 38, 71, 2, 64, 49, 94}
+	array := []int{2, 1, 3}
 
 	fmt.Println("Array before sorting", array)
 	fmt.Println()
